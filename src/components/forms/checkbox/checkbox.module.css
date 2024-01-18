@@ -1,0 +1,19 @@
+.container {
+  @apply relative cursor-pointer text-[22px] select-none flex items-center gap-3;
+}
+.container input {
+  @apply absolute opacity-0 cursor-pointer h-0 w-0;
+}
+.checkmark {
+  @apply absolute w-full h-full bg-transparent border rounded-sm border-black left-0 top-0 after:content-[""] after:absolute after:hidden;
+}
+.container:hover input ~ .checkmark {
+  @apply bg-[#ccc];
+}
+.container input:checked ~ .checkmark:after {
+  @apply block;
+}
+.container .checkmark:after {
+  @apply w-[8px] h-[18px] rotate-45 border-black left-1.5 top-[-1px];
+  border-width: 0 3px 3px 0;
+}

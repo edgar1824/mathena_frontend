@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: "Work Sans", sans-serif;
+  font-style: normal;
+  box-sizing: border-box;
+}
+
+:root {
+  --dark-green: #8ca39d;
+  --green: #084442;
+  --light-green: #b9e6c9;
+  --yellow: #ffc309;
+  --red: #d32121;
+  --light-gray: rgba(8, 68, 66, 0.1);
+  --gray: #9d9d9d;
+
+  --gl-py: calc((77 / 16) * 1rem);
+}
+
+input,
+textarea,
+select {
+  outline: none;
+}
+
+#root {
+  @apply max-w-[100vw] grid grid-cols-[250px_auto] min-h-screen w-full relative;
+}
+
+/* ### Components ### */
+.custom-scrollbar {
+  &::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  &::-webkit-scrollbar-track {
+    background: #e8cfcf;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #8b7575;
+  }
+}
+.select-no-icon {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.analitics {
+  & .pie_chart {
+    & .apexcharts-datalabels rect {
+      @apply w-[57px] h-[57px] text-center;
+    }
+    & .apexcharts-pie-label {
+      @apply translate-x-[-5px] translate-y-[14px];
+    }
+    & .apexcharts-legend {
+      @apply justify-end;
+    }
+  }
+}
